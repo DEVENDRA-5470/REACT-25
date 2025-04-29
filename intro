@@ -1,0 +1,35 @@
+what is react js :
+React js is a frontend library written in javascript and developed by facebook in 2011
+this is an open source library.
+
+why use react js.
+1.lifecycle of components.
+2.states and props.
+3.Dynamic data creation.
+4.less code more work.
+5.Fast ui/ux development.
+6.SPA (Single page application) no need to create multiple html file (index.html).
+
+How to create react app.
+1.CRA (Create react app) 
+- Slow building.
+- Good for small project
+- Limited customization
+- npx create-react-app app_name
+
+2.Vite (Modern app)
+- Fast building
+- Good for small and as well as lager project
+- Easy to customize and extend
+- npm create vite@latest app_name
+
+recurments:
+node
+npm
+
+1.npm create vite@latest first_project
+2.React
+3.JavaScript + SWC
+4.cd first_project
+5.npm install
+6.npm run dev

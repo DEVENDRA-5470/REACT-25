@@ -1,0 +1,55 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+nav{
+  background-color: rgb(7, 67, 50);
+  padding: 20px;
+}
+
+nav a{
+  text-decoration: none;
+  color: white;
+  margin-left: 10px;
+  font-size: 18px;
+}
+
+nav span{
+  color: white;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.form-div{
+  border: 1px solid rgba(218, 214, 214, 0.97);
+  width: 300px;
+  padding: 10px;
+  background: white;
+}
+
+input,select,button {
+  width: 100%;
+  padding: 5px 10px;
+}
+
+.main{
+  display: flex;
+  justify-content: center;
+}
+
+.box{
+  margin-top: 10px;
+}
+
+.head{
+  color: red;
+  font-weight: 900;
+}
+
+body{
+  background: rgb(248, 246, 246);
+}

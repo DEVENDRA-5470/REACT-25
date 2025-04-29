@@ -1,0 +1,9 @@
+body{
+    background-color: gainsboro;
+}
+.box{
+    background:linear-gradient(aqua,white) ;
+    width: 200px;
+    padding: 20px;
+    margin: 300px auto;
+}
