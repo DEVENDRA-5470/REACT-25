@@ -7,6 +7,7 @@ let Navbar=()=>{
             <Link to="/dashboard">Dashboard</Link> <span> | </span>
             <Link to="/register">Register</Link> <span> | </span>
             <Link to="/login">Login</Link> <span> | </span>
+            
         </nav>
     )
 }

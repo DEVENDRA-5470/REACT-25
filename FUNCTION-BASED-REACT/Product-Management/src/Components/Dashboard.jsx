@@ -1,9 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 let Dashboard= ()=>{
     return (
         <div>
-        <button className="btn btn-success" style={{width:'10%',margin:"10px"}}>ADD PRODUCT</button>
+        <button className="btn btn-success" 
+        style={{width:'10%',margin:"10px"}}>
+        <Link to="/addproduct">Add Product</Link> 
+        </button>
 
 
             <table class="table table-hover">

@@ -61,7 +61,7 @@ let Login= ()=>{
                     </div>
 
                     <div className="box">
-                        <button type="submit">Login Now</button>
+                        <button className="btn btn-primary mt-2" type="submit">Login Now</button>
                     </div>
 
                    {error &&  <p style={{color:"red"}}>{error}</p>}

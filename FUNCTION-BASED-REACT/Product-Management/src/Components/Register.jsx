@@ -62,7 +62,7 @@ let Register= ()=>{
            <br />
              <div className="main">
             <div className="form-div">
-                <p className="head">Register Now</p>
+                <p className="head">Register Now </p>
                 <form action="" onSubmit={handleSubmit}>
 
                     <div className="box">
@@ -97,7 +97,7 @@ let Register= ()=>{
                     </div>
 
                     <div className="box">
-                        <button type="submit">Register Now</button>
+                        <button className="btn btn-success mt-2" type="submit">Register Now</button>
                     </div>
 
                 </form>
