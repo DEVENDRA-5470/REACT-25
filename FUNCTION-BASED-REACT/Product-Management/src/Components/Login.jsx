@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { UserContext } from "../UserContext";
 
 let Login= ()=>{
-
+    const {setUser}=useContext(UserContext)
     let navigate=useNavigate()
 
     let [loginData,setLoginData]=useState({emp_id:"",password:""})
@@ -27,15 +27,12 @@ let Login= ()=>{
 
         if (storeData){
             let userData=JSON.parse(storeData)
+            localStorage.setItem("loggedUser",JSON.stringify(userData))
             if (userData.password===password){
+                setUser(userData)
                 // check role 
-                if (userData.role==="admin" || userData.role==="Admin"){
-                    navigate("/dashboard")
-                }
-                else{
-                    navigate("/home")
-                }
-                
+                navigate('/dashboard')
+             
             }else{setError("Incorrect Password")}
         }else{setError("Incorrect Login ID")}
     }

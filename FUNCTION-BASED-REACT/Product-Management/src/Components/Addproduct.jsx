@@ -5,7 +5,6 @@ const AddProduct =()=>{
     // state defining
     let [product,setProduct]=useState({
         id:"",
-        datetime:"",
         name:"",
         price:"",
         description:"",
@@ -46,12 +45,20 @@ const AddProduct =()=>{
         let time_stamp=getCurrenttime()
 
         let newProduct={...product,id,time_stamp}
-        localStorage.setItem(id,JSON.stringify(newProduct))
+
+        // get the current product for storage
+        let storedProducts=JSON.parse(localStorage.getItem('products')) || []
+
+        // add the new product
+        storedProducts.push(newProduct)
+
+        // store the update array back in the localstorage
+        localStorage.setItem('products',JSON.stringify(storedProducts))
         alert("Product Added Successfully ✅")
+      
 
         setProduct({
             id:"",
-            datetime:"",
             name:"",
             price:"",
             description:"",
