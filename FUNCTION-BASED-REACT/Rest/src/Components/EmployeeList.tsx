@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { createEmployee, fetchEmployees } from "../apis";
+import { createEmployee, fetchEmployees,deleteEmployee } from "../apis";
 import type { Employee } from "../type";
 
 const EmployeeList : React.FC =()=>{
@@ -17,6 +17,7 @@ const EmployeeList : React.FC =()=>{
         E_GENDER:''
     })
 
+    // Get data
 
     useEffect(()=>{
     const getEmployees = async ()=>{
@@ -35,7 +36,7 @@ const EmployeeList : React.FC =()=>{
 },[])
 
 
-
+// Create data
 const handleCreate=async()=>{
     try{
         const created=await createEmployee(newEmployee);
@@ -54,6 +55,20 @@ const handleCreate=async()=>{
         setError("FAILED TO CREATE EMPLOYEE...")
     }
 }
+
+
+// Delete data
+let handleDelete=async (id:number)=>{
+    try{
+        await deleteEmployee(id)
+        setEmployees((prev)=>prev.filter((emp)=> emp.id !== id));
+    }
+    catch{
+        setError("Failed to delete.")
+    }
+}
+
+
 
 if (loading) return <div>Content is Loading Please wait..</div>
 if (error) return <div>{error}</div>
@@ -90,11 +105,13 @@ return (
         
 
         <h1>Employee List</h1>
-        <ul>
+        <ul style={{listStyle:"none"}}>
             {employees.map((emp)=>
                 <li key={emp.id}>
                     <div>
+                        <br />
                         <strong>{emp.E_NAME}</strong> | {emp.E_ID} | {emp.E_GENDER} | 
+                        <button onClick={()=>handleDelete(emp.id)} >Delete {emp.E_NAME}</button>
                     </div>
                 </li>
             )}
